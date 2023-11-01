@@ -5,8 +5,8 @@
   <artifactId>my-web-app</artifactId>
   <packaging>war</packaging>
   <properties>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
   <version>1.0-SNAPSHOT</version>
   <name>my-web-app Maven Webapp</name>
@@ -17,6 +17,16 @@
       <artifactId>javax.servlet-api</artifactId>
       <version>4.0.1</version>
       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.32</version> <!-- Use the latest version -->
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.6</version> <!-- Use the latest version -->
     </dependency>
 
   </dependencies>

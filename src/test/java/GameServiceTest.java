@@ -1,8 +1,8 @@
 
-import interfaces.Games;
 import lombok.extern.slf4j.Slf4j;
 import models.GameTypes;
 import models.User;
+import models.games.abstracts.AbstractGame;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -60,7 +60,7 @@ public class GameServiceTest {
     @ParameterizedTest
     @MethodSource("streamGameTypesFactory")
     public void createGameTest(GameTypes type){
-        Games game = gameConstructor.getGame(type);
+        AbstractGame game = gameConstructor.getGame(type);
         game.setUser(user);
         assertEquals(game.getType(), service.createGame(type,user).getType());
         assertEquals(game.getUser(), service.createGame(type,user).getUser());

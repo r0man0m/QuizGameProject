@@ -1,13 +1,12 @@
 package service;
 
 import exceptions.NotUserExistsException;
-import interfaces.Games;
 import models.GameTypes;
 import models.User;
+import models.games.abstracts.AbstractGame;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import repositories.UserDataBase;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +20,7 @@ public class GameService {
     private GameConstructor constructor = new GameConstructor();
     private GameIterator iterator = new GameIterator();
 
-    private Map<Integer, Games>db = new HashMap<>();
+    private Map<Integer, AbstractGame>db = new HashMap<>();
     private static final Logger logger = LoggerFactory.getLogger(GameService.class);
 
     private GameService() {
@@ -33,11 +32,11 @@ public class GameService {
         }
         return instance;
     }
-    public void setGame(Games game, Integer id){
+    public void setGame(AbstractGame game, Integer id){
         db.put(id, game);
         logger.info("Game " + game.getType() + " Game id " + game.getId() + " set ");
     }
-    public Games getGame(Integer id){
+    public AbstractGame getGame(Integer id){
         logger.info("Get game id " + id + db.get(id));
         return db.get(id);
     }
@@ -101,8 +100,8 @@ public class GameService {
             throw new NotUserExistsException("User is not exists!");
         }
     }
-    public Games createGame(GameTypes type, User user){
-        Games game = constructor.getGame(type);
+    public AbstractGame createGame(GameTypes type, User user){
+        AbstractGame game = constructor.getGame(type);
         game.setId(getGameCounter());
         game.setUser(user);
         logger.info("Game " + game.getType() + " game id " + game.getId() + " created");

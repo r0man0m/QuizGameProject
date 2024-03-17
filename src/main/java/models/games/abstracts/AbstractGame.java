@@ -11,11 +11,9 @@ import models.User;
 import java.util.Objects;
 @Data
 public abstract class AbstractGame implements Games {
-    @Setter
     private Integer id;
     private User user;
     private GameTypes type;
-    @Getter
     private Content content;
 
     public AbstractGame(Content content, GameTypes type) {

@@ -1,6 +1,7 @@
 package servlets;
 
 import interfaces.Games;
+import models.games.abstracts.AbstractGame;
 import service.GameService;
 
 import javax.servlet.ServletException;
@@ -18,7 +19,7 @@ public class GameServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(true);
-        Games game = (Games) session.getAttribute("game");
+        AbstractGame game = (AbstractGame) session.getAttribute("game");
         session.setAttribute("question", game.getContent().getQuestion(0));
         session.setAttribute("answer1", game.getContent().getAnswer(0).get(0));
         session.setAttribute("answer2", game.getContent().getAnswer(0).get(1));

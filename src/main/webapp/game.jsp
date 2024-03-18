@@ -1,6 +1,6 @@
 <%@ page import="models.User" %>
-<%@ page import="interfaces.Games" %>
-<%@ page import="models.GameTypes" %><%--
+<%@ page import="models.GameTypes" %>
+<%@ page import="models.games.abstracts.AbstractGame" %><%--
   Created by IntelliJ IDEA.
   User: Roman
   Date: 25.02.2024
@@ -16,7 +16,7 @@
 </head>
 <body class="w3-light-grey">
 <%String image = null;%>
-<% Games game = (Games) session.getAttribute("game");%>
+<% AbstractGame game = (AbstractGame) session.getAttribute("game");%>
 <% GameTypes type = game.getType();%>
 <% switch (type) {
     case UFO: {

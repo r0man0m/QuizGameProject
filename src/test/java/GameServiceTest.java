@@ -11,7 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import repositories.UserDataBase;
+import repositories.DataBase;
 import service.GameConstructor;
 import service.GameService;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class GameServiceTest {
     private static final GameConstructor gameConstructor = new GameConstructor();
 
     @Mock
-    UserDataBase mockUserDataBase;
+    DataBase mockUserDataBase;
 
     @InjectMocks
     private static GameService service;

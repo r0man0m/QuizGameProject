@@ -3,13 +3,19 @@ package models.games.abstracts;
 import interfaces.Content;
 import interfaces.Games;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import models.GameTypes;
 import models.User;
 
-import java.util.Objects;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 @Data
+@ToString
+@EqualsAndHashCode
 public abstract class AbstractGame implements Games {
     private Integer id;
     private User user;
@@ -20,22 +26,11 @@ public abstract class AbstractGame implements Games {
         this.content = content;
         this.type = type;
     }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        AbstractGame game = (AbstractGame) o;
-        return Objects.equals(id, game.id) && Objects.equals(user, game.user);
-    }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(id, user, type, content);
+    public void action(HttpSession session, HttpServletRequest request, HttpServletResponse response, Integer number) throws ServletException, IOException {
+        request.getRequestDispatcher("notContent.jsp").forward(request, response);
     }
-
-    @Override
-    public String toString() {
-        return type.getTitle() + " id= " + getId() + " user= " + getUser();
-    }
-
 }
+
+

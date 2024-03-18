@@ -9,9 +9,9 @@ public class UfoContent extends AbstractContent {
 
     public UfoContent() {
         List<String> pair = new ArrayList<>();
-        getQuestions().put(0,"Ви втрачаєте пам'ять, прийняти виклик НЛО?");
-        getQuestions().put(1,"Ви прийняли виклик. Піднятися на капітанський місток?");
-        getQuestions().put(2,"Ви піднялися на місток. Хто ви?");
+        getQuestions().put(0, "Ви втрачаєте пам'ять, прийняти виклик НЛО?");
+        getQuestions().put(1, "Ви прийняли виклик. Піднятися на капітанський місток?");
+        getQuestions().put(2, "Ви піднялися на місток. Хто ви?");
         getQuestions().put(3, "Вас повернули додому. Перемога!");
         pair.add("Прийняти виклик");
         pair.add("Відхилити виклик");
@@ -30,12 +30,12 @@ public class UfoContent extends AbstractContent {
     }
 
     @Override
-    public String getQuestion(Integer numberQuestion) {
+    public String getQuestion(int numberQuestion) {
         return getQuestions().get(numberQuestion);
     }
 
     @Override
-    public List<String> getAnswer(Integer numberPairAnswers) {
+    public List<String> getAnswer(int numberPairAnswers) {
         return getPairAnswers(numberPairAnswers);
     }
 

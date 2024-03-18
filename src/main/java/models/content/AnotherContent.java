@@ -10,17 +10,17 @@ public class AnotherContent extends AbstractContent {
         List<String> pair = new ArrayList<>();
         pair.add("No content!");
         pair.add("No content!");
-        getAnswers().put(0,pair);
-        getQuestions().put(0,"No content!");
+        getAnswers().put(0, pair);
+        getQuestions().put(0, "No content!");
     }
 
     @Override
-    public String getQuestion(Integer numberQuestion) {
+    public String getQuestion(int numberQuestion) {
         return getQuestions().get(numberQuestion);
     }
 
     @Override
-    public List<String> getAnswer(Integer numberPairAnswers) {
+    public List<String> getAnswer(int numberPairAnswers) {
         return getAnswers().get(numberPairAnswers);
     }
 }

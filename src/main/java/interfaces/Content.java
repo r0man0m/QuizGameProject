@@ -5,9 +5,9 @@ import java.util.Map;
 
 public interface Content {
 
-    Map<Integer, String>getQuestions();
-    Map<Integer, List<String>>getAnswers();
-     Map<Integer, String> getDefeatMessages();
-    public String getQuestion(Integer numberQuestion);
-    public List<String> getAnswer(Integer numberPairAnswers);
+    Map <Integer, String> getQuestions();
+    Map <Integer, List<String>> getAnswers();
+    Map <Integer, String> getDefeatMessages();
+    String getQuestion(int numberQuestion);
+    List<String> getAnswer(int numberPairAnswers);
 }

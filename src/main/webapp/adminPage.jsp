@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="styles/w3.css">
 <html>
 <head>
-    <title>User`s List</title>
+    <title>Users List</title>
 
 </head>
 <body class="w3-light-grey">

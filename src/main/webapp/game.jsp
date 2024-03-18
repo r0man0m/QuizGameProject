@@ -1,6 +1,6 @@
-<%@ page import="models.User" %>
-<%@ page import="models.GameTypes" %>
-<%@ page import="models.games.abstracts.AbstractGame" %><%--
+<%@ page import="com.quizgame.models.User" %>
+<%@ page import="com.quizgame.models.GameTypes" %>
+<%@ page import="com.quizgame.models.games.abstracts.AbstractGame" %><%--
   Created by IntelliJ IDEA.
   User: Roman
   Date: 25.02.2024
@@ -34,11 +34,16 @@
 }%>
 <div class=<%=image%>>
     <div class="w3-container w3-blue-grey w3-opacity-min w3-center w3-animate-zoom">
-        <h2><%=session.getAttribute("question")%></h2>
-            <form class=" w3-container w3-light-grey w3-padding w3-centered" action="game" method="post">
-                <button class="w3-btn w3-border-aqua w3-round-large w3-margin-bottom w3-text-blue" type="submit" name="button" value="1"><h3><%=session.getAttribute("answer1")%></h3></button>
-                <button class="w3-btn w3-border-aqua w3-round-large w3-margin-bottom w3-text-blue" type="submit" name="button" value="2"><h3><%=session.getAttribute("answer2")%></h3></button>
-            </form>
+        <h2><%=session.getAttribute("question")%>
+        </h2>
+        <form class=" w3-container w3-light-grey w3-padding w3-centered" action="game" method="post">
+            <button class="w3-btn w3-border-aqua w3-round-large w3-margin-bottom w3-text-blue" type="submit"
+                    name="button" value="1"><h3><%=session.getAttribute("answer1")%>
+            </h3></button>
+            <button class="w3-btn w3-border-aqua w3-round-large w3-margin-bottom w3-text-blue" type="submit"
+                    name="button" value="2"><h3><%=session.getAttribute("answer2")%>
+            </h3></button>
+        </form>
     </div>
 </div>
 
@@ -53,12 +58,15 @@
     <a href="/setGame">Choice another game</a>
 </div>
 <div class="w3-container w3-light-gray w3-opacity w3-left-align-align w3-padding">
-    <%User user = (User)session.getAttribute("user");%>
-        <aside>
+    <%User user = (User) session.getAttribute("user");%>
+    <aside>
         <h3>Statistics</h3>
-        <p>Ip adress: <%=request.getRemoteAddr()%></p>
-        <p>Nickname:<%=user.getNickName()%></p>
-        <p>Game counter:<%=user.getGameCount()%> </p>
+        <p>Ip adress: <%=request.getRemoteAddr()%>
+        </p>
+        <p>Nickname:<%=user.getNickName()%>
+        </p>
+        <p>Game counter:<%=user.getGameCount()%>
+        </p>
 
     </aside>
 </div>

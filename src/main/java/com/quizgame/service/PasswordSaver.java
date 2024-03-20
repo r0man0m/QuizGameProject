@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 public class PasswordSaver {
     private Integer password = 1;
-    private static final PasswordSaver instance = new PasswordSaver();
+    private static PasswordSaver instance;
     private static final Logger logger = LoggerFactory.getLogger(PasswordSaver.class);
 
     private PasswordSaver() {
@@ -13,7 +13,7 @@ public class PasswordSaver {
 
     public static synchronized PasswordSaver getInstance() {
         if (instance == null) {
-            return new PasswordSaver();
+            instance =  new PasswordSaver();
         }
         return instance;
     }

@@ -1,7 +1,7 @@
 package com.quizgame.service;
 
 public class UserCounter {
-    private static UserCounter instance = new UserCounter();
+    private static UserCounter instance;
     private Integer countUser = 0;
 
     private UserCounter() {
@@ -9,7 +9,7 @@ public class UserCounter {
 
     public static synchronized UserCounter getInstance() {
         if (instance == null) {
-            return new UserCounter();
+            instance =  new UserCounter();
         }
         return instance;
     }

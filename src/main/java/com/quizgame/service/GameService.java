@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class GameService {
     private DataBase userDataBase = new DataBase();
-    private static final GameService instance = new GameService();
+    private static GameService instance;
     private final UserCounter userCounter = UserCounter.getInstance();
     private final GameCounter gameCounter = new GameCounter();
     private final GameConstructor constructor = new GameConstructor();
@@ -27,7 +27,7 @@ public class GameService {
 
     public static synchronized GameService getInstance() {
         if (instance == null) {
-            return new GameService();
+            instance = new GameService();
         }
         return instance;
     }

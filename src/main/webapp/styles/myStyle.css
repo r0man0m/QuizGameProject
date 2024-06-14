@@ -1,0 +1,26 @@
+.game {
+    background-image: url('images/ufo3.jpg');
+    background-size: contain;
+}
+
+.winImage {
+    background-image: url("images/ufo2.jpg");
+    background-size: cover;
+}
+
+.looseImage {
+    background-image: url("images/aliens.jpg");
+    background-size: cover;
+}
+
+.smile {
+    background-image: url("images/upset.jpg");
+    background-size: contain;
+}
+
+.black_smile {
+    background-image: url("images/upset.jpg");
+    background-size: 100px;
+    background-repeat: repeat;
+    background-position: center;
+}
